@@ -1,0 +1,154 @@
+/* Variables */
+:root {
+  --color-primary: #1e293b;
+  --color-secondary: #e3d5c8;
+  --color-text: #081123;
+  --color-background: #f8fafc;
+  --color-danger: #811313;
+  --color-success: #0d4c23;
+  --color-placeholder: #081123d7;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+/* REGLAGES DE BASE ET RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* LIENS */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* HEADER & FOOTER */
+.main-header,
+.main-footer {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 1rem 1.5rem;
+}
+
+.main-header,
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HEADER SPÉCIFIQUE */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link[aria-current="page"] {
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+/* FOOTER SPÉCIFIQUE */
+.footer-top {
+  padding-bottom: 1rem;
+}
+
+.footer-hours {
+  text-align: center;
+}
+
+.footer-payments {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.5rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.company-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address-tel {
+  margin-top: 1rem;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding-top: 1rem;
+}
