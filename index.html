@@ -3,14 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/assets/fonts/inter-v20-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/playfair-display-v40-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js" defer></script>
     <title>Vite & Gourmand - Accueil</title>
+    <meta
+      name="description"
+      content="Découvrez Vite & Gourmand, traiteur d'excellence à Bordeaux depuis 25 ans. Menus sur-mesure pour tous vos événements."
+    />
   </head>
   <body>
     <header class="main-header">
@@ -19,10 +32,34 @@
         class="navbar-brand"
         aria-label="Retour à l'accueil - Vite & Gourmand"
       >
-        <img src="./assets/icons/logo.svg" alt="Vite & Gourmand" class="logo" />
+        <img
+          src="./assets/icons/logo.svg"
+          alt="Vite & Gourmand"
+          class="logo"
+          fetchpriority="high"
+        />
       </a>
 
-      <nav class="main-nav" aria-label="Navigation principale">
+      <button
+        id="mobile-nav"
+        aria-label="Ouvrir le menu de navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <img
+          class="nav-icon"
+          src="./assets/icons/icon-open-burger.svg"
+          alt=""
+        />
+        <img
+          class="nav-icon"
+          src="./assets/icons/icon-close-burger.svg"
+          alt=""
+          hidden
+        />
+      </button>
+
+      <nav id="main-nav" aria-label="Navigation principale">
         <a href="index.html" class="nav-link" aria-current="page">Accueil</a>
         <a href="menus.html" class="nav-link">Menus</a>
         <a href="connexion.html" class="nav-link">Connexion</a>
