@@ -218,22 +218,27 @@ a:focus-visible {
   text-align: center;
   padding-top: 1rem;
 }
-
-/* HERO SECTION */
+/* SECTIONS */
 .main-content {
   max-width: 768px;
-  margin: 2.5rem auto;
+  margin: 4rem auto;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-.hero-section {
+.hero-section,
+.team-section,
+.reviews-section {
   background-color: var(--color-secondary);
   padding: 2.5rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   border-radius: var(--radius-main);
 }
 
+/* SECTION HERO */
 .hero-text,
 .hero-img {
   width: calc(50% - 0.5rem);
@@ -251,9 +256,46 @@ a:focus-visible {
   gap: 1.25rem;
 }
 
-.hero-img {
+.hero-img,
+.team-avatar {
   object-fit: cover;
-  height: stretch;
+}
+
+/* SECTION TEAM */
+.team-section {
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    .team-card {
+      background-color: var(--color-primary);
+      color: var(--color-secondary);
+      padding: 2rem 4rem;
+      border-radius: var(--radius-main);
+      box-shadow: var(--shadow-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .avatar-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      .team-avatar {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
 
 /* MEDIA QUERIES */
@@ -273,14 +315,14 @@ a:focus-visible {
     order: 3;
     margin-top: 1rem;
     align-items: stretch;
-    
+
     .nav-link {
       text-align: right;
       padding: 1rem;
       width: 100%;
       border-radius: var(--radius-main);
     }
-    
+
     .nav-link[aria-current="page"] {
       background-color: var(--color-secondary);
       color: var(--color-text);
@@ -291,18 +333,23 @@ a:focus-visible {
   .main-content {
     max-width: 500px;
   }
+  
+  .hero-section,
+  .team-section,
+  .reviews-section {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
 
   .hero-section {
     flex-direction: column-reverse;
-    gap: 2rem;
-    padding: 2rem 1rem;
   }
-  
-  .hero-text, 
+
+  .hero-text,
   .hero-img {
     width: 100%;
   }
-  
+
   .hero-img {
     height: 200px;
     flex: none;
@@ -319,5 +366,14 @@ a:focus-visible {
 
   .footer-payments {
     display: flex;
+  }
+
+  .team-section .cards-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .team-section .cards-container .team-card {
+    padding: 1.5rem 1rem;
   }
 }
