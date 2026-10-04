@@ -36,7 +36,8 @@
           src="./assets/icons/logo.svg"
           alt="Vite & Gourmand"
           class="logo"
-          fetchpriority="high"
+          width="200"
+          height="100"
         />
       </a>
 
@@ -50,11 +51,15 @@
           class="nav-icon"
           src="./assets/icons/icon-open-burger.svg"
           alt=""
+          width="44"
+          height="44"
         />
         <img
           class="nav-icon"
           src="./assets/icons/icon-close-burger.svg"
           alt=""
+          width="44"
+          height="44"
           hidden
         />
       </button>
@@ -69,7 +74,31 @@
     </header>
 
     <main class="main-content">
-      <section class="hero-section"></section>
+      <section class="hero-section">
+        <div class="hero-text">
+          <h1>
+            L'excellence traiteur à Bordeaux depuis 25 ans.
+          </h1>
+          <p>
+            Julie et José vous accompagnent dans tous vos événements, de Noël à
+            Pâques, avec des menus sur-mesure.
+          </p>
+          <a href="menus.html" class="btn btn-primary">Voir nos menus</a>
+        </div>
+        <img
+          class="hero-img"
+          src="./assets/images/hero.webp"
+          srcset="
+            ./assets/images/hero-mobile.webp 400w,
+            ./assets/images/hero.webp        800w
+          "
+          alt="Présentation d'un buffet lors d'une prestation"
+          fetchpriority="high"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          width="336"
+          height="408"
+        />
+      </section>
       <section class="team-section"></section>
       <section class="reviews-section"></section>
     </main>
@@ -83,12 +112,29 @@
           role="group"
           aria-label="Moyens de paiement acceptés"
         >
-          <img src="./assets/icons/icon-payment-cb.svg" alt="CB" />
-          <img src="./assets/icons/icon-payment-especes.svg" alt="Espèces" />
-          <img src="./assets/icons/icon-payment-paypal.svg" alt="PayPal" />
+          <img
+            src="./assets/icons/icon-payment-cb.svg"
+            alt="CB"
+            width="44"
+            height="44"
+          />
+          <img
+            src="./assets/icons/icon-payment-especes.svg"
+            alt="Espèces"
+            width="44"
+            height="44"
+          />
+          <img
+            src="./assets/icons/icon-payment-paypal.svg"
+            alt="PayPal"
+            width="44"
+            height="44"
+          />
           <img
             src="./assets/icons/icon-payment-tr.svg"
             alt="Tickets Restaurants"
+            width="44"
+            height="44"
           />
         </div>
 
