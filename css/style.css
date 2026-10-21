@@ -320,35 +320,24 @@ a:focus-visible {
 }
 
 .carousel-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
   width: 100%;
   max-width: 768px;
   overflow: hidden;
-  padding: 1rem;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 2rem;
-  transition: transform 0.4s ease;
-}
-
-.review-card {
+.review-card.swiper-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 0 0 250px;
-  max-width: 250px;
-  max-height: 270px;
+  width: 250px !important;
+  height: auto;
   padding: 1rem;
   border-radius: var(--radius-main);
   box-shadow: var(--shadow-main);
   gap: 1rem;
   background-color: var(--color-primary);
   color: var(--color-secondary);
+  box-sizing: border-box;
 }
 
 .review-header {
@@ -357,6 +346,7 @@ a:focus-visible {
   align-items: center;
   gap: 1rem;
 }
+
 .review-body {
   display: flex;
   align-items: center;
@@ -378,7 +368,8 @@ a:focus-visible {
 .carousel-controls {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-top: 2rem;
 }
 
 .btn-next img {
@@ -483,7 +474,7 @@ a:focus-visible {
     justify-items: center;
     gap: 2rem;
   }
-  
+
   .carousel-controls {
     justify-content: space-between;
   }
