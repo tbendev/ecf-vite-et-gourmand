@@ -346,7 +346,7 @@ a:focus-visible {
   padding: 1rem;
   border-radius: var(--radius-main);
   box-shadow: var(--shadow-main);
-  gap: 2rem;
+  gap: 1rem;
   background-color: var(--color-primary);
   color: var(--color-secondary);
 }
