@@ -114,7 +114,7 @@ reviewsData.forEach((review) => {
   trackElement.innerHTML += cardHTML;
 });
 
-// INITIALISATION DE SWIPER
+// INITIALISATION DE SWIPER (Identique Mobile & Desktop)
 const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: "auto",
