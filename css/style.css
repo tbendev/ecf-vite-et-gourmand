@@ -142,6 +142,45 @@ a:focus-visible {
   color: var(--color-text);
 }
 
+.btn-dark {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* 1. LE BOUTON PARENT */
+.btn-title {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn-title img {
+  position: absolute;
+  right: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.btn[aria-expanded="true"] img {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.btn-title:hover {
+  transform: none;
+}
+
+.btn[aria-expanded="true"] img {
+  transform: rotate(180deg);
+}
+
+.btn img {
+  transition: transform 0.3s ease;
+}
+
 .carousel-btn {
   background: transparent;
   border: none;
@@ -241,6 +280,7 @@ a:focus-visible {
 }
 /* SECTIONS */
 .main-content {
+  width: 100%;
   max-width: 768px;
   margin: 4rem auto;
   flex-grow: 1;
@@ -255,7 +295,6 @@ a:focus-visible {
   gap: 2rem;
   border-radius: var(--radius-main);
 }
-
 
 /* SECTION HERO */
 .hero-text,
@@ -378,6 +417,19 @@ a:focus-visible {
 .btn-next img {
   transform: rotate(180deg);
 }
+
+/* SECTION FILTRES / SECTION BOISSONS */
+.filters-section,
+.menus-section,
+.drinks-section {
+  justify-content: center;
+}
+
+.filters-container,
+.drinks-container {
+  width: 100%;
+}
+/* SECTION MENUS */
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {

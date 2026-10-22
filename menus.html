@@ -78,19 +78,54 @@
     </header>
 
     <main class="main-content">
-      <section class="filters-section section-base bg-dark" aria-labelledby="filters-section">
+      <section
+        class="filters-section section-base bg-dark"
+        aria-labelledby="filters-title"
+      >
         <div class="filters-container">
-          <h2 id="filters-section">Affinez votre recherche ...</h2>
+          <h2 id="filters-title">
+            <button
+              type="button"
+              class="btn btn-dark btn-title"
+              aria-expanded="false"
+              aria-controls="filters-content"
+            >
+              Affinez votre recherche ...
+              <img src="./assets/icons/icon-dropdoown.svg" alt="">
+            </button>
+          </h2>
+          <div id="filters-content" class="filters-bar" hidden>
+            <p>Zone de filtres en construction...</p>
+          </div>
         </div>
       </section>
-      <section class="menus-section section-base bg-light" aria-labelledby="menus-section">
+      <section
+        class="menus-section section-base bg-light"
+        aria-labelledby="menus-section"
+      >
         <div class="menus-grid">
           <h2 id="menus-section">Notre selection</h2>
         </div>
       </section>
-      <section class="drinks-section section-base bg-dark" aria-labelledby="drinks-section">
+      <section
+        class="drinks-section section-base bg-dark"
+        aria-labelledby="drinks-section"
+      >
         <div class="drinks-container">
-          <h2 id="drinks-section">Boissons en supplément</h2>
+          <h2 id="drinks-section">
+            <button
+              type="button"
+              class="btn btn-dark btn-title"
+              aria-expanded="false"
+              aria-controls="drinks-content"
+            >
+              Boissons en supplément
+              <img src="./assets/icons/icon-dropdoown.svg" alt="">
+            </button>
+          </h2>
+          <div id="drinks-content" class="drinks-content" hidden>
+            <p>Zone de boissons en construction...</p>
+          </div>
         </div>
       </section>
     </main>
