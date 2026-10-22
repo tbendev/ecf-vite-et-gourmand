@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-v20-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/playfair-display-v40-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="./js/main.js" defer></script>
+    <title>Vite & Gourmand - Accueil</title>
+    <meta
+      name="description"
+      content="Découvrez Vite & Gourmand, traiteur d'excellence à Bordeaux depuis 25 ans. Menus sur-mesure pour tous vos événements."
+    />
+  </head>
+  <body>
+    <header class="main-header bg-dark">
+      <a
+        href="index.html"
+        class="navbar-brand"
+        aria-label="Retour à l'accueil - Vite & Gourmand"
+      >
+        <img
+          src="./assets/icons/logo.svg"
+          alt="Vite & Gourmand"
+          class="logo"
+          width="200"
+          height="100"
+        />
+      </a>
+
+      <button
+        id="mobile-nav"
+        aria-label="Ouvrir le menu de navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <img
+          class="nav-icon"
+          src="./assets/icons/icon-open-burger.svg"
+          alt=""
+          width="44"
+          height="44"
+        />
+        <img
+          class="nav-icon"
+          src="./assets/icons/icon-close-burger.svg"
+          alt=""
+          width="44"
+          height="44"
+          hidden
+        />
+      </button>
+
+      <nav id="main-nav" aria-label="Navigation principale">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="menus.html" class="nav-link" aria-current="page">Menus</a>
+        <a href="connexion.html" class="nav-link">Connexion</a>
+        <a href="inscription.html" class="nav-link">Inscription</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="filters-section section-base bg-dark" aria-labelledby="filters-section">
+        <div class="filters-container">
+          <h2 id="filters-section">Affinez votre recherche ...</h2>
+        </div>
+      </section>
+      <section class="menus-section section-base bg-light" aria-labelledby="menus-section">
+        <div class="menus-grid">
+          <h2 id="menus-section">Notre selection</h2>
+        </div>
+      </section>
+      <section class="drinks-section section-base bg-dark" aria-labelledby="drinks-section">
+        <div class="drinks-container">
+          <h2 id="drinks-section">Boissons en supplément</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer bg-dark">
+      <div class="footer-top">
+        <p class="footer-hours">Horaires<br />du Lundi au Dimanche</p>
+
+        <div
+          class="footer-payments"
+          role="group"
+          aria-label="Moyens de paiement acceptés"
+        >
+          <img
+            src="./assets/icons/icon-payment-cb.svg"
+            alt="CB"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+          <img
+            src="./assets/icons/icon-payment-especes.svg"
+            alt="Espèces"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+          <img
+            src="./assets/icons/icon-payment-paypal.svg"
+            alt="PayPal"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+          <img
+            src="./assets/icons/icon-payment-tr.svg"
+            alt="Tickets Restaurants"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+        </div>
+
+        <nav class="footer-legal" aria-label="Liens légaux">
+          <a href="cgv.html">CGV</a>
+          <a href="legals.html">Mentions légales</a>
+        </nav>
+
+        <address class="company-address">
+          <span>1 rue de la Gastronomie</span>
+          <span>33000 Bordeaux</span>
+          <a href="tel:+33606060606" class="address-tel">06 05 04 03 02</a>
+        </address>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-copyright">
+        <small>© 2026 Vite & Gourmand - Tous droits réservés</small>
+      </div>
+    </footer>
+  </body>
+</html>

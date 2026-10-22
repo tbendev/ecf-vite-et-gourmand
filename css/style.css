@@ -154,11 +154,19 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+/* CLASSES UTILITAIRES */
+.bg-light {
+  background-color: var(--color-secondary);
+}
+
+.bg-dark {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 /* HEADER & FOOTER */
 .main-header,
 .main-footer {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
   padding: 1rem 1.5rem;
 }
 
@@ -241,15 +249,13 @@ a:focus-visible {
   gap: 4rem;
 }
 
-.hero-section,
-.team-section,
-.reviews-section {
-  background-color: var(--color-secondary);
+.section-base {
   padding: 2.5rem;
   display: flex;
   gap: 2rem;
   border-radius: var(--radius-main);
 }
+
 
 /* SECTION HERO */
 .hero-text,
@@ -260,8 +266,6 @@ a:focus-visible {
 }
 
 .hero-text {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -286,8 +290,6 @@ a:focus-visible {
     gap: 2rem;
 
     .team-card {
-      background-color: var(--color-primary);
-      color: var(--color-secondary);
       padding: 2rem 4rem;
       border-radius: var(--radius-main);
       box-shadow: var(--shadow-main);
@@ -338,8 +340,6 @@ a:focus-visible {
   border-radius: var(--radius-main);
   box-shadow: var(--shadow-main);
   gap: 1rem;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
   box-sizing: border-box;
 }
 
@@ -417,8 +417,7 @@ a:focus-visible {
     max-width: 500px;
   }
 
-  .hero-section,
-  .team-section {
+  .section-base {
     padding: 2rem 1rem;
     gap: 2rem;
   }
@@ -468,7 +467,7 @@ a:focus-visible {
   }
 
   /* Section reviews */
- .reviews-section {
+  .reviews-section {
     padding: 2rem 0;
     gap: 2rem;
     width: 100%;
@@ -479,7 +478,7 @@ a:focus-visible {
   .carousel-container {
     width: 100%;
     max-width: 100vw;
-    overflow: hidden !important; 
+    overflow: hidden !important;
     box-sizing: border-box;
   }
 
@@ -487,4 +486,3 @@ a:focus-visible {
     gap: 1.5rem;
   }
 }
-

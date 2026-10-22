@@ -95,7 +95,7 @@ const generateStars = (rating) => {
 
 const createReviewCard = (review) => {
   return `
-        <article class="review-card swiper-slide">
+        <article class="review-card swiper-slide bg-dark">
             <div class="review-header">
                 <h3 class="review-name">${review.name}</h3>
                 <div class="stars-container" role="img" aria-label="Note de ${review.rating} sur 5">
