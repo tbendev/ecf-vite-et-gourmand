@@ -1,37 +1,29 @@
-// ==========================================
-// MENU BURGER - MOBILE
-// ==========================================
 
-// Sélection DOM
+// MENU BURGER - MOBILE
 const burgerToggle = document.getElementById("mobile-nav");
 const mainNav = document.getElementById("main-nav");
 const navIcons = document.querySelectorAll(".nav-icon");
 
-burgerToggle.addEventListener("click", () => {
-  // Affichage navigation
-  mainNav.classList.toggle("is-open");
+if (burgerToggle && mainNav) {
+  burgerToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("is-open");
 
-  // Maj RGAA accessibilité
-  const isExpanded = burgerToggle.getAttribute("aria-expanded");
-  if (isExpanded === "false") {
-    burgerToggle.setAttribute("aria-expanded", "true");
-  } else {
-    burgerToggle.setAttribute("aria-expanded", "false");
-  }
+    const isExpanded = burgerToggle.getAttribute("aria-expanded");
+    if (isExpanded === "false") {
+      burgerToggle.setAttribute("aria-expanded", "true");
+    } else {
+      burgerToggle.setAttribute("aria-expanded", "false");
+    }
 
-  // Alterne les icônes burger / croix
-  navIcons.forEach((icon) => {
-    icon.toggleAttribute("hidden");
+    navIcons.forEach((icon) => {
+      icon.toggleAttribute("hidden");
+    });
   });
-});
+}
 
-// ==========================================
-// REVIEWS CARROUSEL (Swiper.js Invisible)
-// ==========================================
-
+// REVIEWS CARROUSEL (Swiper.js)
 const trackElement = document.querySelector(".carousel-track");
 
-// Mock data
 const reviewsData = [
   {
     id: 1,
@@ -99,7 +91,7 @@ const createReviewCard = (review) => {
             <div class="review-header">
                 <h3 class="review-name">${review.name}</h3>
                 <div class="stars-container" role="img" aria-label="Note de ${review.rating} sur 5">
-                    ${generateStars(review.rating)}                
+                    ${generateStars(review.rating)}
                 </div>
             </div>
             <div class="review-body">
@@ -109,20 +101,43 @@ const createReviewCard = (review) => {
     `;
 };
 
-reviewsData.forEach((review) => {
-  let cardHTML = createReviewCard(review);
-  trackElement.innerHTML += cardHTML;
-});
 
-// INITIALISATION DE SWIPER (Identique Mobile & Desktop)
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  slidesPerView: "auto",
-  spaceBetween: 32,
-  centeredSlides: true,
-  grabCursor: true,
-  navigation: {
-    nextEl: ".btn-next",
-    prevEl: ".btn-prev",
-  },
+if (trackElement) {
+  reviewsData.forEach((review) => {
+    let cardHTML = createReviewCard(review);
+    trackElement.innerHTML += cardHTML;
+  });
+
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 32,
+    centeredSlides: true,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".btn-next",
+      prevEl: ".btn-prev",
+    },
+  });
+}
+
+// SÉLECTEUR DE QUANTITÉ (Page Menus)
+document.addEventListener('DOMContentLoaded', () => {
+  const btnDecrease = document.querySelector('button[aria-label="Diminuer le nombre de personnes"]');
+  const btnIncrease = document.querySelector('button[aria-label="Augmenter le nombre de personnes"]');
+  const qtyValue = document.querySelector('.qty-value');
+
+  if (btnDecrease && btnIncrease && qtyValue) {
+    btnIncrease.addEventListener('click', () => {
+      let currentQty = parseInt(qtyValue.textContent, 10);
+      qtyValue.textContent = currentQty + 1;
+    });
+
+    btnDecrease.addEventListener('click', () => {
+      let currentQty = parseInt(qtyValue.textContent, 10);
+      if (currentQty > 1) {
+        qtyValue.textContent = currentQty - 1;
+      }
+    });
+  }
 });

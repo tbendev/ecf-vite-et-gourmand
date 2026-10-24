@@ -91,14 +91,142 @@
               aria-controls="filters-content"
             >
               Affinez votre recherche ...
-              <img src="./assets/icons/icon-dropdoown.svg" alt="">
+              <img src="./assets/icons/icon-dropdoown.svg" alt="" />
             </button>
           </h2>
-          <div id="filters-content" class="filters-bar" hidden>
-            <p>Zone de filtres en construction...</p>
+
+          <div id="filters-content">
+            <form class="filters-form" action="#" method="GET">
+              <div class="filters-row">
+                <div class="filter-group">
+                  <label for="menu-choice">Thème :</label>
+                  <div class="custom-select-wrapper">
+                    <select
+                      id="menu-choice"
+                      name="choice"
+                      class="filter-select"
+                    >
+                      <option value="default">Option par défaut</option>
+                      <option value="christmas">Noël</option>
+                      <option value="easter">Pâques</option>
+                      <option value="event">Événement</option>
+                      <option value="kid">Enfant</option>
+                      <option value="classic">Classique</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="filter-group qty-group">
+                  <label id="qty-label">Personnes min :</label>
+                  <div class="quantity-selector" aria-labelledby="qty-label">
+                    <button
+                      type="button"
+                      class="btn-qty"
+                      aria-label="Diminuer le nombre de personnes"
+                    >
+                      <img
+                        src="./assets/icons/icon-decrease.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                      />
+                    </button>
+                    <span class="qty-value" aria-live="polite">1</span>
+                    <button
+                      type="button"
+                      class="btn-qty"
+                      aria-label="Augmenter le nombre de personnes"
+                    >
+                      <img
+                        src="./assets/icons/icon-increase.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-group price-group">
+                <label for="price-range">Prix maximum :</label>
+                <div class="range-wrapper">
+                  <input
+                    type="range"
+                    id="price-range"
+                    name="price"
+                    min="0"
+                    max="200"
+                    value="100"
+                  />
+                  <div class="range-labels">
+                    <span>0 €</span>
+                    <span>200 €</span>
+                  </div>
+                </div>
+              </div>
+
+              <fieldset class="filter-group diets-group">
+                <legend>Régime :</legend>
+                <div class="checkbox-grid">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="diet-classic"
+                      name="diet"
+                      value="classic"
+                    />
+                    <label for="diet-classic">Classique</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="diet-glutenfree"
+                      name="diet"
+                      value="glutenfree"
+                    />
+                    <label for="diet-glutenfree">Sans gluten</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="diet-vegan"
+                      name="diet"
+                      value="vegan"
+                    />
+                    <label for="diet-vegan">Végan</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="diet-halal"
+                      name="diet"
+                      value="halal"
+                    />
+                    <label for="diet-halal">Halal</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="diet-vegetarian"
+                      name="diet"
+                      value="vegetarian"
+                    />
+                    <label for="diet-vegetarian">Végétarien</label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+
+            <div class="filters-actions">
+              <button class="btn btn-primary">Appliquer</button>
+              <button class="btn btn-primary">Effacer</button>
+            </div>
           </div>
         </div>
       </section>
+
       <section
         class="menus-section section-base bg-light"
         aria-labelledby="menus-section"
@@ -107,6 +235,7 @@
           <h2 id="menus-section">Notre selection</h2>
         </div>
       </section>
+
       <section
         class="drinks-section section-base bg-dark"
         aria-labelledby="drinks-section"
@@ -120,7 +249,7 @@
               aria-controls="drinks-content"
             >
               Boissons en supplément
-              <img src="./assets/icons/icon-dropdoown.svg" alt="">
+              <img src="./assets/icons/icon-dropdoown.svg" alt="" />
             </button>
           </h2>
           <div id="drinks-content" class="drinks-content" hidden>
