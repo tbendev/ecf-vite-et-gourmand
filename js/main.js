@@ -20,7 +20,7 @@ if (burgerToggle && mainNav) {
   });
 }
 
-// REVIEWS CARROUSEL (Swiper.js)
+// CARROUSEL - ACCUEIL
 const trackElement = document.querySelector(".carousel-track");
 
 const reviewsData = [
@@ -119,7 +119,7 @@ if (trackElement) {
   });
 }
 
-// ACCORDÉONS (Filtres & Boissons)
+// ACCORDÉONS FILTRES / BOISSONS - MENUS
 const accordionButtons = document.querySelectorAll(".btn-title[aria-controls]");
 
 accordionButtons.forEach((button) => {
@@ -129,14 +129,14 @@ accordionButtons.forEach((button) => {
 
     if (targetContent) {
       const isExpanded = button.getAttribute("aria-expanded") === "true";
-      
+
       button.setAttribute("aria-expanded", !isExpanded);
       targetContent.hidden = isExpanded;
     }
   });
 });
 
-// SÉLECTEUR DE QUANTITÉ (Page Menus)
+// SÉLECTEUR DE QUANTITÉ - MENUS / FILTRES 
 document.addEventListener("DOMContentLoaded", () => {
   const btnDecrease = document.querySelector(
     'button[aria-label="Diminuer le nombre de personnes"]',
@@ -160,3 +160,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// CURSEUR PRIX - MENUS / FILTRES 
+const priceRange = document.getElementById("price-range");
+const currentPrice = document.getElementById("current-price");
+
+if (priceRange && currentPrice) {
+  priceRange.addEventListener('input', () => {
+    currentPrice.textContent = priceRange.value;
+  });
+}
