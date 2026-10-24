@@ -150,7 +150,9 @@
               </div>
 
               <div class="filter-group price-group">
-                <label for="price-range">Prix maximum : <span id="current-price">100</span> €</label>
+                <label for="price-range"
+                  >Prix maximum : <span id="current-price">100</span> €</label
+                >
                 <div class="range-wrapper">
                   <input
                     type="range"
@@ -229,10 +231,33 @@
 
       <section
         class="menus-section section-base bg-light"
-        aria-labelledby="menus-section"
+        aria-labelledby="section-menus-title"
       >
+        <h2 id="section-menus-title">Notre selection</h2>
         <div class="menus-grid">
-          <h2 id="menus-section">Notre selection</h2>
+          <article class="menu-card">
+            <div class="card-header">
+              <img
+                src="./assets/images/menu-noel.webp"
+                alt="Table festive de noël"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-body-header">
+                <h3 class="menu-title">FÉERIE D'HIVER</h3>
+                <p>55 €</p>
+              </div>
+              <p class="menu-description">
+                Plongez dans la magie des fêtes avec des créations
+                réconfortantes, mêlant tradition et touches de modernité.
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="menu-conditions">À partir de 4 personnes</small>
+              <p class="stock-alert">Plus que 5 commandes possibles</p>
+              <button class="btn btn-dark">Voir le menu</button>
+            </div>
+          </article>
         </div>
       </section>
 

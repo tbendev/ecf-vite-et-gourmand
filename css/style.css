@@ -153,7 +153,8 @@ a:focus-visible {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 1rem;
+  padding: 1rem 3.5rem;
+  text-align: center;
 }
 
 .btn-title img {
@@ -609,6 +610,82 @@ button.btn-title[aria-expanded="true"] img {
 }
 
 /* SECTION MENUS */
+.menus-section {
+  flex-direction: column;
+  align-items: center;
+}
+
+.menus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-main);
+  border-radius: var(--radius-main);
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-body-header p {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+
+.menu-description {
+  margin: auto 0;
+}
+
+.card-footer {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-conditions,
+.stock-alert {
+  font-style: italic;
+  text-align: center;
+}
+
+.stock-alert {
+  margin-bottom: 1rem;
+}
+
+.card-footer button {
+  color: var(--color-background);
+}
+
 /* SECTION DRINKS */
 
 /* MEDIA QUERIES */
@@ -716,5 +793,23 @@ button.btn-title[aria-expanded="true"] img {
 
   .carousel-controls {
     gap: 1.5rem;
+  }
+
+  /* SECTION MENUS */
+  .btn-title {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .menus-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .menu-card {
+    width: 100%;
+    max-width: 380px;
   }
 }
