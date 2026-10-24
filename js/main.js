@@ -1,4 +1,3 @@
-
 // MENU BURGER - MOBILE
 const burgerToggle = document.getElementById("mobile-nav");
 const mainNav = document.getElementById("main-nav");
@@ -101,7 +100,6 @@ const createReviewCard = (review) => {
     `;
 };
 
-
 if (trackElement) {
   reviewsData.forEach((review) => {
     let cardHTML = createReviewCard(review);
@@ -121,19 +119,40 @@ if (trackElement) {
   });
 }
 
+// ACCORDÉONS (Filtres & Boissons)
+const accordionButtons = document.querySelectorAll(".btn-title[aria-controls]");
+
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("aria-controls");
+    const targetContent = document.getElementById(targetId);
+
+    if (targetContent) {
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      
+      button.setAttribute("aria-expanded", !isExpanded);
+      targetContent.hidden = isExpanded;
+    }
+  });
+});
+
 // SÉLECTEUR DE QUANTITÉ (Page Menus)
-document.addEventListener('DOMContentLoaded', () => {
-  const btnDecrease = document.querySelector('button[aria-label="Diminuer le nombre de personnes"]');
-  const btnIncrease = document.querySelector('button[aria-label="Augmenter le nombre de personnes"]');
-  const qtyValue = document.querySelector('.qty-value');
+document.addEventListener("DOMContentLoaded", () => {
+  const btnDecrease = document.querySelector(
+    'button[aria-label="Diminuer le nombre de personnes"]',
+  );
+  const btnIncrease = document.querySelector(
+    'button[aria-label="Augmenter le nombre de personnes"]',
+  );
+  const qtyValue = document.querySelector(".qty-value");
 
   if (btnDecrease && btnIncrease && qtyValue) {
-    btnIncrease.addEventListener('click', () => {
+    btnIncrease.addEventListener("click", () => {
       let currentQty = parseInt(qtyValue.textContent, 10);
       qtyValue.textContent = currentQty + 1;
     });
 
-    btnDecrease.addEventListener('click', () => {
+    btnDecrease.addEventListener("click", () => {
       let currentQty = parseInt(qtyValue.textContent, 10);
       if (currentQty > 1) {
         qtyValue.textContent = currentQty - 1;

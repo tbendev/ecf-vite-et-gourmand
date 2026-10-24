@@ -148,36 +148,24 @@ a:focus-visible {
 }
 
 .btn-title {
-  padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 1rem;
 }
 
 .btn-title img {
   position: absolute;
-  right: 0rem;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   transition: transform 0.3s ease;
 }
 
-.btn[aria-expanded="true"] img {
+button.btn-title[aria-expanded="true"] img {
   transform: translateY(-50%) rotate(180deg);
-}
-
-.btn-title:hover {
-  transform: none;
-}
-
-.btn[aria-expanded="true"] img {
-  transform: rotate(180deg);
-}
-
-.btn img {
-  transition: transform 0.3s ease;
 }
 
 .carousel-btn {
