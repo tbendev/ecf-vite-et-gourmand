@@ -86,7 +86,7 @@
           <h2 id="filters-title">
             <button
               type="button"
-              class="btn btn-dark btn-title"
+              class="btn btn-primary btn-title"
               aria-expanded="false"
               aria-controls="filters-content"
             >
@@ -96,7 +96,7 @@
           </h2>
 
           <div id="filters-content" hidden>
-            <form class="filters-form" action="#" method="GET">
+            <form class="filters-form bg-light" action="#" method="GET">
               <div class="filters-row">
                 <div class="filter-group">
                   <label for="menu-choice">Thème :</label>
@@ -269,7 +269,7 @@
           <h2 id="drinks-section">
             <button
               type="button"
-              class="btn btn-dark btn-title"
+              class="btn btn-primary btn-title"
               aria-expanded="false"
               aria-controls="drinks-content"
             >
@@ -277,8 +277,33 @@
               <img src="./assets/icons/icon-dropdoown.svg" alt="" />
             </button>
           </h2>
-          <div id="drinks-content" class="drinks-content" hidden>
-            <p>Zone de boissons en construction...</p>
+          <div id="drinks-content" class="drinks-content bg-light" hidden>
+            <article class="drink-category">
+              <div class="drink-category-header">
+                <h3 class="drink-title">Les vins :</h3>
+                <p class="drink-price">22 € - 75 cl</p>
+              </div>
+              <ul class="drink-list">
+                <li class="drink-item">Bordeaux AOC (Charpenté)</li>
+                <li class="drink-item">Pinot Noir (Léger et fruité)</li>
+                <li class="drink-item">Côtes du Rhône (Rond et épicé)</li>
+                <li class="drink-item">Chardonnay (Sec et boisé)</li>
+                <li class="drink-item">Sauvignon Blanc (Fruité et sec)</li>
+                <li class="drink-item">Blanc moelleux (Sauternes)</li>
+                <li class="drink-item">Côtes de Provence (Frais et léger)</li>
+                <li class="drink-item">Rosé d'Anjou (Légèrement sucré)</li>
+              </ul>
+            </article>
+            <article class="drink-category">
+              <div class="drink-category-header">
+                <h3 class="drink-title">Les bulles :</h3>
+                <p class="drink-price">35 € - 75 cl</p>
+              </div>
+              <ul class="drink-list">
+                <li class="drink-item">Champagne Brut AOC</li>
+                <li class="drink-item">Crémant de Bordeaux</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>

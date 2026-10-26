@@ -69,6 +69,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   color: var(--color-text);
   background-color: var(--color-background);
@@ -184,6 +188,7 @@ button.btn-title[aria-expanded="true"] img {
 /* CLASSES UTILITAIRES */
 .bg-light {
   background-color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .bg-dark {
@@ -416,6 +421,11 @@ button.btn-title[aria-expanded="true"] img {
 .filters-container,
 .drinks-container {
   width: 100%;
+  color: var(--color-text);
+}
+
+.btn-title.btn-primary img {
+  filter: brightness(0.1);
 }
 
 /* SECTION FILTERS */
@@ -436,6 +446,7 @@ button.btn-title[aria-expanded="true"] img {
   flex-direction: column;
   align-items: stretch;
   text-align: left;
+  padding: 1rem;
 }
 
 .filter-group {
@@ -450,8 +461,7 @@ button.btn-title[aria-expanded="true"] img {
 }
 
 .filter-select {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: var(--color-background);
   font-family: var(--font-body);
   font-weight: var(--fw-medium);
   border: 1px solid var(--color-placeholder);
@@ -462,6 +472,7 @@ button.btn-title[aria-expanded="true"] img {
 }
 
 .quantity-selector {
+  background-color: var(--color-background);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -469,14 +480,8 @@ button.btn-title[aria-expanded="true"] img {
   width: 120px;
   height: 40px;
   padding: 0 0.5rem;
-  background-color: var(--color-secondary);
   border: 1px solid var(--color-placeholder);
   border-radius: 4px;
-}
-
-.qty-value {
-  color: var(--color-primary);
-  font-weight: var(--fw-bold);
 }
 
 .btn-qty {
@@ -526,8 +531,7 @@ button.btn-title[aria-expanded="true"] img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--color-secondary);
-  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
   cursor: pointer;
 }
 
@@ -535,7 +539,6 @@ button.btn-title[aria-expanded="true"] img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--color-secondary);
   border: 2px solid var(--color-primary);
   cursor: pointer;
 }
@@ -583,7 +586,7 @@ button.btn-title[aria-expanded="true"] img {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-placeholder);
   border-radius: 4px;
   background-color: transparent;
   cursor: pointer;
@@ -594,7 +597,7 @@ button.btn-title[aria-expanded="true"] img {
 }
 
 .checkbox-item input[type="checkbox"]:checked {
-  background-color: var(--color-secondary);
+  background-color: var(--color-placeholder);
 }
 
 .filters-actions {
@@ -687,6 +690,42 @@ button.btn-title[aria-expanded="true"] img {
 }
 
 /* SECTION DRINKS */
+#drinks-content {
+  padding: 1.5rem 2rem;
+}
+
+.drink-category {
+  margin-top: 2rem;
+}
+
+.drink-category:first-child {
+  margin-top: 0;
+}
+
+.drink-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drink-title,
+.drink-price {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+}
+
+.drink-list {
+  list-style: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 2rem;
+}
+
+.drink-item {
+  font-style: italic;
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
@@ -811,5 +850,10 @@ button.btn-title[aria-expanded="true"] img {
   .menu-card {
     width: 100%;
     max-width: 380px;
+  }
+
+  /* SECTION DRINKS */
+  .drink-list {
+    grid-template-columns: 1fr;
   }
 }
